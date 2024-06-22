@@ -1,0 +1,32 @@
+
+1. ReplicaSet Controller: Ensures a specified number of pod replicas are running at any given time, facilitating horizontal scaling and fault tolerance.
+
+2. Deployment Controller: Manages ReplicaSets and provides declarative updates to Pods and ReplicaSets, enabling easy rollout and rollback of application changes.
+
+3. StatefulSet Controller: Manages stateful applications and provides unique identities and stable network identifiers to each pod in the set, ensuring stateful operations and ordered deployment.
+
+4. DaemonSet Controller: Ensures that all (or some) nodes run a copy of a pod, typically used for system daemons like log collectors or monitoring agents.
+
+5. Job Controller: Creates one or more pods and ensures they successfully terminate, useful for batch processing or short-lived tasks.
+
+6. CronJob Controller: Creates jobs on a repeating schedule, similar to cron jobs in UNIX-like operating systems.
+
+7. Service Controller: Manages lifecycle and availability of services in Kubernetes, ensuring network connectivity to a set of pods.
+
+8. Endpoint Controller: Populates the Endpoints object (which is used by Services) with the IP addresses of the pods that match the Service.
+
+9. Namespace Controller: Handles creation, deletion, and updates to namespaces within the cluster, providing a scope for resources.
+
+10. PersistentVolume Controller: Manages the lifecycle of PersistentVolumes, ensuring persistent storage is available to pods.
+
+11. Node Controller: Manages nodes in the cluster, monitoring their health and status.
+
+12. Token Controller: Manages lifecycle of tokens used by the bootstrap process for establishing trust between nodes and the control plane.
+
+13. Service Account Controller: Manages the lifecycle of service accounts, which provide an identity for processes that run in a pod.
+
+14. EndpointSlice Controller: Manages the EndpointSlice resource, which enhances scalability and efficiency for large-scale services with many endpoints.
+
+15. Custom Resource Definition (CRD) Controllers: These are controllers created by users to manage custom resources defined via CRDs, extending Kubernetes with custom APIs.
+
+16. HorizontalPodAutoscaler (HPA) Controller: Automatically scales the number of pods in a replication controller, deployment, replica set, or stateful set based on observed CPU utilization or other custom metrics.
