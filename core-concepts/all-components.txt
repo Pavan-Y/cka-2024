@@ -1,0 +1,46 @@
+ETCD:
+
+    - Distributed key-value store for Kubernetes cluster state.
+    - Ensures high availability and fault tolerance.
+    - Supports secure communication with mutual TLS.
+    - Monitoring health and performance is crucial
+
+Kube api server:
+
+    - Central management entity of the Kubernetes control plane.
+    - Processes and validates RESTful API requests.
+    - Updates the cluster's state in etcd.
+    - Serves as the communication hub for all Kubernetes components.
+    - Enforces access control and authentication.
+    - High availability setups ensure continuous cluster management.
+
+K8s controller manager:
+
+    - Manages controller processes that enforce the desired state of Kubernetes resources.
+    - Uses control loops to continuously monitor and reconcile the actual state of resources with their desired state, ensuring cluster consistency.
+    - Orchestrates controllers such as Node Controller, ReplicaSet Controller, and Service Controller to handle specific tasks like node management, scaling applications, and managing service endpoints.
+    - Supports high availability by implementing leader election mechanisms, ensuring resilience and reliability in managing Kubernetes resources.
+
+Kube Scheduler:
+    
+    - Evaluates pod scheduling requirements such as resource constraints, affinity/anti-affinity rules, and pod priority.
+    - Selects optimal nodes based on available resources, node conditions, and other policies defined by the cluster administrator.
+    - Utilizes scheduling algorithms (e.g., spread, bin packing) to distribute workload efficiently across the Kubernetes cluster.
+    - Implements scheduling policies to prioritize workload placement, ensuring high availability, performance, and resource utilization.
+    - Supports extensibility through custom schedulers and plugins, allowing integration with specialized hardware or scheduling strategies tailored to specific use cases.
+
+Kubelet:
+
+    - Acts as an agent running on each node in the Kubernetes cluster, responsible for managing the node and communicating with the Kubernetes control plane.
+    - Executes pod containers via container runtime (e.g., Docker, containerd), handling pod start, stop, and restart operations as directed by the API server.
+    - Monitors node resource usage (CPU, memory, disk) and reports metrics to the Kubernetes API server for cluster-wide monitoring and resource allocation decisions.
+    - Manages pod networking, including assigning IP addresses, setting up network namespaces, and configuring networking rules as per Kubernetes network plugins (e.g., CNI).
+    - Regularly reports node status (conditions, capacities, allocatable resources) to the API server, ensuring accurate cluster state and enabling node maintenance and auto-scaling decisions.
+
+Kubeproxy:
+    - Acts as a network proxy and load balancer for Kubernetes services, forwarding traffic to appropriate backend pods based on service IP and port.
+    - Enables service discovery within the Kubernetes cluster by maintaining IP tables rules that route traffic to service endpoints.
+    - Distributes incoming traffic across multiple pods associated with a service, supporting session affinity and load balancing strategies defined in service specifications.
+    - Monitors the availability of backend pods and updates IP tables rules dynamically to reflect changes in pod status and service endpoints.
+    - Enforces network policies defined in Kubernetes to restrict communication between pods and external traffic, enhancing cluster security and isolation.
+
